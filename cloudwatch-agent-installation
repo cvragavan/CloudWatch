@@ -1,0 +1,29 @@
+Step1: Install the awslogs package. This is the recommended method for installing awslogs on Amazon Linux instances.
+
+# sudo yum install -y awslogs
+
+Step2: Edit the /etc/awslogs/awslogs.conf file to configure the logs to track. For more information about editing this file, see CloudWatch Logs Agent Reference.
+
+Step3: By default, the /etc/awslogs/awscli.conf points to the us-east-1 region. To push your logs to a different region, edit the awscli.conf file and specify that region.
+
+Step4: Start the awslogs service.
+
+# sudo service awslogs start
+
+If you are running Amazon Linux 2, start the awslogs service with the following command.
+
+# sudo systemctl start awslogsd
+
+Step5: (Optional) Check the /var/log/awslogs.log file for errors logged when starting the service.
+
+Step6: (Optional) Run the following command to start the awslogs service at each system boot.
+
+# sudo chkconfig awslogs on
+
+If you are running Amazon Linux 2, use the following command to start the service at each system boot.
+
+# sudo systemctl enable awslogsd.service
+
+Step7: You should see the newly created log group and log stream in the CloudWatch console after the agent has been running for a few moments.
+
+For more information, see View Log Data Sent to CloudWatch Logs.
