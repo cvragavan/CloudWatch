@@ -8,6 +8,8 @@ This article will help you to monitor EC2 Linux instance memory and disk metrics
 ## Prerequsiteis
 For this tutorial, you will use the Perl scripts provided by AWS team, These scripts have some dependencies. You can use the following commands to install these dependencies as per your operating systems.
 
+### please install the cloud watch agent (./cloudwatch-agent-installation)
+
 ### Redhat Based Systems:
 
 #### sudo yum install perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA
