@@ -26,6 +26,7 @@ sudo zypper install –y "perl(LWP::Protocol::https)"
 ##Download and Configure Script
 
 wget  http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
+
 unzip CloudWatchMonitoringScripts-1.2.1.zip
 
 Now create credentails file with coping template file.
