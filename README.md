@@ -32,6 +32,7 @@ unzip CloudWatchMonitoringScripts-1.2.1.zip
 Now create credentails file with coping template file.
 
 cd /aws-scripts-mon
+
 cp awscreds.template awscreds.conf
 
 Now, You need to add AWSAccessKeyId and AWSSecretKey of your AWS account. This will verify account ownership for the script. If you don’t have, you can create keys in your account under Users >> Security credentials section.
@@ -42,7 +43,9 @@ Otherwise you can attached IAM role into your instances.
 At this point, your setup is complete. Let’s use the following command to verify the connectivity between script and your AWS account.
 
 ./mon-put-instance-data.pl --mem-util --verify --verbose
- (OR)
+
+(OR)
+
 ./mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --mem-used --mem-avail
 
 The output will be something like below on successful verification.
