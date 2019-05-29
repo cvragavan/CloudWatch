@@ -10,30 +10,30 @@ For this tutorial, you will use the Perl scripts provided by AWS team, These scr
 
 ### Redhat Based Systems:
 
-sudo yum install perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA
-sudo yum install zip unzip
+#### sudo yum install perl-Switch perl-DateTime perl-Sys-Syslog perl-LWP-Protocol-https perl-Digest-SHA
+#### sudo yum install zip unzip
 
 ### Debian Based Systems:
 
-sudo apt-get update
-sudo apt-get install unzip libwww-perl libdatetime-perl
+#### sudo apt-get update
+#### sudo apt-get install unzip libwww-perl libdatetime-perl
 
 ### SUSE Linux Enterprise Server:
 
-sudo zypper install perl-Switch perl-DateTime
-sudo zypper install –y "perl(LWP::Protocol::https)"
+#### sudo zypper install perl-Switch perl-DateTime
+#### sudo zypper install –y "perl(LWP::Protocol::https)"
 
 ## Download and Configure Script
 
-wget  http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
+#### wget  http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
 
-unzip CloudWatchMonitoringScripts-1.2.1.zip
+#### unzip CloudWatchMonitoringScripts-1.2.1.zip
 
 Now create credentails file with coping template file.
 
-cd /aws-scripts-mon
+#### cd /aws-scripts-mon
 
-cp awscreds.template awscreds.conf
+#### cp awscreds.template awscreds.conf
 
 Now, You need to add AWSAccessKeyId and AWSSecretKey of your AWS account. This will verify account ownership for the script. If you don’t have, you can create keys in your account under Users >> Security credentials section.
 
@@ -42,11 +42,11 @@ Otherwise you can attached IAM role into your instances.
 ## Test and Schedule Scripts
 At this point, your setup is complete. Let’s use the following command to verify the connectivity between script and your AWS account.
 
-./mon-put-instance-data.pl --mem-util --verify --verbose
+#### ./mon-put-instance-data.pl --mem-util --verify --verbose
 
 (OR)
 
-./mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --mem-used --mem-avail
+#### ./mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --mem-used --mem-avail
 
 The output will be something like below on successful verification.
 
