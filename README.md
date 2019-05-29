@@ -61,3 +61,16 @@ You should wait for some time after adding crontab. So it can collect some data 
 >> Go to CloudWatch Service
 >> Click on Browse Metrics button
 >> Select Linux System under Custom Namespaces.
+
+## To set a cron schedule for metrics reported to CloudWatch
+
+Start editing the crontab using the following command:
+
+#### crontab -e 
+
+Add the following command to report memory and disk space utilization to CloudWatch every five minutes:
+
+#### $ */5 * * * * /root/aws-scripts-mon/aws-scripts-mon/mon-put-instance-data.pl --mem-used-incl-cache-buff --mem-util --disk-space-util --disk-path=/ --from-cron
+
+#### $ crontab -l
+
